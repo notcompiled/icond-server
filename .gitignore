@@ -2,6 +2,9 @@
 /dist
 /node_modules
 
+# credentials
+/src/credentials.ts
+
 # Logs
 logs
 *.log
