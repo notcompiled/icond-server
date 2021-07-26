@@ -6,7 +6,7 @@ export const LoginSchema = new Schema({
 });
 
 export interface Login extends Document {
-    id: string,
-    username: string,
-    password: string
+    id: string;
+    username: string;
+    password: string;
 }

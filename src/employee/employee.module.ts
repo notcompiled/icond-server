@@ -10,7 +10,8 @@ import { LoginModule } from 'src/login/login.module';
     MongooseModule.forFeature([{
       name: 'Employee',
       schema: EmployeeSchema
-    }]), LoginModule],
+    }]),
+    LoginModule],
   controllers: [EmployeeController],
   providers: [EmployeeService]
 })

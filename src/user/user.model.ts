@@ -7,6 +7,7 @@ export const UserSchema = new Schema({
     email: { type: String, required: true },
     payDay: { type: String, required: true },
     isPaid: { type: Boolean, required: true },
+    loginId: { type: String, required: true },
 });
 
 export interface User extends Document {
@@ -17,4 +18,5 @@ export interface User extends Document {
     email: string;
     payDay: string;
     isPaid: boolean;
+    loginId: string;
 }

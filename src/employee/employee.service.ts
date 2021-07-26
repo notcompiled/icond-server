@@ -12,8 +12,8 @@ export class EmployeeService {
         private readonly loginService: LoginService
     ){}
 
-    async register(data: EmployeeDto) {
-        const loginId = await this.loginService.register(data);
+    async insert(data: EmployeeDto) {
+        const loginId = await this.loginService.registerEmployee(data);
         const newEmployee = new this.employeeModel({
             name: data.name,
             cpf: data.cpf,

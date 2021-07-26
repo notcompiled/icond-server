@@ -37,6 +37,7 @@ export class ResidentService {
     }
 
     async insert(data: ResidentDto){
+        const loginId = await this.loginService.registerResident(data);
         const chars = "0123456789"
         let code = "";
         for (let i=0; i<6; i++) {
@@ -51,7 +52,8 @@ export class ResidentService {
             isPaid: false,
             houseId: data.house,
             price: "890.3",
-            pass: code
+            pass: code,
+            loginId
         });
         const result = await newResident.save();
         return result.id;

@@ -1,4 +1,5 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { ResidentDto } from './resident.dto';
 import { Resident } from './resident.model';
 import { ResidentService } from './resident.service';
 
@@ -12,7 +13,7 @@ export class ResidentController {
   }
 
   @Post('insert')
-  async insert(@Body() data: Resident){
+  async insert(@Body() data: ResidentDto){
     const generatedId = await this.residentService.insert(data);
     return { id: generatedId };
   }

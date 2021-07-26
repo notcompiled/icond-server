@@ -1,4 +1,4 @@
-import { Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { EmployeeDto } from './employee.dto';
 import { EmployeeService } from './employee.service';
 
@@ -6,8 +6,9 @@ import { EmployeeService } from './employee.service';
 export class EmployeeController {
   constructor(private readonly employeeService: EmployeeService) {}
 
-  @Post('register')
-  async register(data: EmployeeDto) {
-    return this.employeeService.register(data);
+  @Post('insert')
+  async insert(@Body() data: EmployeeDto) {
+    const generatedId = await this.employeeService.insert(data);
+    return { id: generatedId };
   }
 }

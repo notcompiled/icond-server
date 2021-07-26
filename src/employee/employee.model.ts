@@ -8,11 +8,10 @@ export const EmployeeSchema = new Schema({
     email: { type: String, required: true },
     payDay: { type: String, required: true },
     isPaid: { type: Boolean, required: true },
+    loginId: { type: String, required: true },
     role: { type: String, required: true },
-    loginId: { type: String, required: true }
 });
 
 export interface Employee extends User {
     role: string;
-    login: string;
 }
