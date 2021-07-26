@@ -13,6 +13,7 @@ export class EmployeeService {
     ){}
 
     async insert(data: EmployeeDto) {
+        console.log(data);
         const loginId = await this.loginService.registerEmployee(data);
         const newEmployee = new this.employeeModel({
             name: data.name,
@@ -34,7 +35,7 @@ export class EmployeeService {
             user = await this.employeeModel.findOne({
                 loginId: id
             });
-            return { user: user.role };
+            return { name: user.name, user: user.role };
         } catch (error) {
             throw new NotFoundException("Could not find user.");
         }
