@@ -45,7 +45,7 @@ export class LoginService {
     async login(username: string, password: string) {
         const user = await this.findByUser(username);
         if (user.password === password) {
-            return user.id;
+            return { id: user.id };
         }
         throw new NotFoundException("Invalid login");
     }
