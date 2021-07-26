@@ -47,6 +47,6 @@ export class LoginService {
         if (user.password === password) {
             return user.id;
         }
-        return false;
+        throw new NotFoundException("Invalid login");
     }
 }
