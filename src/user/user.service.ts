@@ -27,10 +27,10 @@ export class UserService {
         try{
             user = await this.userModel.findById(id);
         } catch (error) {
-            throw new NotFoundException("Could not find house.");
+            throw new NotFoundException("Could not find user.");
         }
         if (!user){
-            throw new NotFoundException("Could not find house.");
+            throw new NotFoundException("Could not find user.");
         }
         return user;
     }
